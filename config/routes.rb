@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
    #root "headlines#fetch_headlines"
    root "main#index"
+   get '/divide_by_zero', to: 'main#divide_by_zero'
+
    #get 'headlines/index'
 
 end  
