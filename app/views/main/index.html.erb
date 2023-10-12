@@ -5,18 +5,42 @@
 </head>
 <body>
   <h1>Welcome to Main Site</h1>
-  <!-- Your content here -->
 
 
+  #<% if flash[:error] %>
+   # <div class="alert alert-danger">
+   #   <%= flash[:error] %>
+   # </div>
+  #<% end %>
 
 
+  <title>Headlines</title>
 
-  <!-- Display any error messages -->
-  <% if flash[:error] %>
-    <div class="alert alert-danger">
-      <%= flash[:error] %>
-    </div>
-  <% end %>
+
+  <h1 style="color: red;" >Latest Headlines</h1>
+  <!-- Display New York Times headlines -->
+  <h2 style="color: green;">New York Times Headlines</h2>
+  <ul>
+    <% nytimes_headlines.each do |headline| %>
+      <li>
+      <a href="<%= headline['href'] %>"><%= headline.text %></a>
+
+      </li>
+    <% end %>
+  </ul>
+
+  <!-- Display Bangkok Post headlines -->
+  <h2 style="color: green;" >Bangkok Post Headlines</h2>
+  <ul>
+    <% bangkokpost_headlines.each do |headline| %>
+      <li>
+      <a href="<%= headline['href'] %>"><%= headline.text %></a>
+
+      </li>
+    <% end %>
+  </ul>
+
+
 </body>
 </html>
 
