@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Headlines</title>
+</head>
+<body>
+  <h1>Latest Headlines</h1>
+  <!-- Display New York Times headlines -->
+  <h2>New York Times Headlines</h2>
+  <ul>
+    <% nytimes_headlines.each do |headline| %>
+      <li>
+      <a href="<%= headline['href'] %>"><%= headline.text %></a>
+
+      </li>
+    <% end %>
+  </ul>
+
+  <!-- Display Bangkok Post headlines -->
+  <h2>Bangkok Post Headlines</h2>
+  <ul>
+    <% bangkokpost_headlines.each do |headline| %>
+      <li>
+      <a href="<%= headline['href'] %>"><%= headline.text %></a>
+
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>
